@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./WEB-INF/templates/homeTemplate.xhtml"
+                xmlns:h="jakarta.faces.html">
+
+    <ui:define name="title">
+        <h:outputStylesheet library="css" name="home.css" />
+
+    </ui:define>
+      <ui:define name="content">
+        <!-- Image -->
+        
+        <div class="hero-image">
+            <div class="hero-text">
+                <h1>Welcome to Our Hospital</h1>
+                <p>Leading the way in medical excellence.</p>
+            </div>
+        </div>
+
+        <!-- About Us Section -->
+        <div class="container mt-5">
+            <section class="section" id="about">
+                <section id="flex-section2" class="w700">
+                <div class="box">
+                <nav>
+                    <ul>
+                        <li class="greybox item1"><img src="./resources/images/about.jpg" alt="Description of Image 1"></img>                      
+                        </li>
+                        <li class="greybox item2"><h2>About Us</h2><p>"Welcome to Glow 
+                                Innovations! Founded in 2015, we are devoted to revolutionizing 
+                                the way you experience home lighting. Our journey began with a simple 
+                                yet powerful idea: to create lighting solutions that are both smart and 
+                                beautifully designed. At Glow Innovations, we harness cutting-edge technology 
+                                to offer energy-efficient, user-friendly products that enhance the comfort and 
+                                aesthetics of your living spaces. Driven by creativity and the pursuit of excellence, 
+                                we strive to deliver exceptional quality and innovative design in every product. We believe in sustainability, customer-centric innovation, and the power of great design to transform daily life. Join us as we illuminate possibilities and bring your world to light."
+                    </p>                           
+                        </li>
+                    </ul>    
+                </nav>
+                    <br></br>
+                </div>
+            </section>            
+            </section>
+           
+        </div>
+        
+        <!-- Doctor Section -->
+        <div class="container">
+            <section class="section" id="doctor">
+                <h2>Our Doctors</h2>
+                <section id="flex-section2" class="w700">
+                <div class="box">
+                <nav>
+                    <ul>
+                        <li class="greybox item1"><img src="./resources/images/doctor2.jpg" alt="Description of Image 1"></img>                      
+                        </li>
+                        <li class="greybox item2"><img src="./resources/images/doctor3.jpg" alt="Description of Image 2"></img>                            
+                        </li>
+                        <li class="greybox item3"><img src="./resources/images/doctor1.jpg" alt="Description of Image 3"></img></li>    
+                    </ul>
+                   <ul>
+                        <li class="greybox item1"><h5>Elin Josh Doctor</h5>     
+                        </li>
+                        <li class="greybox item2">                            
+                            <h5>Adam View Doctor</h5>
+                        </li>
+                        <li class="greybox item3">
+                            <h5>Mia Mike Doctor</h5>
+                        </li>
+                    </ul>
+                </nav>
+                    <br></br>
+                </div>
+            </section>
+                <p>Meet our team of highly skilled physicians, surgeons, and specialists. Each member of our medical staff is board-certified and brings years of experience to their respective fields.</p>
+            </section>
+        </div>
+
+        <!-- Departments Section -->
+        <div class="container">
+            <section class="section" id="dept">
+                <h2>Departments</h2>
+               
+                <img src="./resources/images/dep.png" alt="Description of Image 1" style="width: 100%"></img> 
+                <br></br>
+                <br></br>
+                    <p>Explore our various medical departments at Citywide Hospital, where specialized care meets 
+                        compassion. Our 24/7 Emergency Department is adept at handling urgent medical needs with 
+                        speed and expertise. The advanced Cardiology unit is dedicated to heart health, while our 
+                        comprehensive Oncology center leads in cutting-edge cancer treatments.</p>
+            </section>
+        </div>
+
+        <!-- Footer Section -->
+<div class="footer">
+    <div class="footer-content container">
+        <div class="footer-section">
+            <h4>Contact Us</h4>
+            <p>123 Orchard Hill Road, Townsville</p>
+            <p>Email: aishwarya@orchardhospital.com</p>
+            <p>Phone: (123) 456-7890</p>
+        </div>
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#doctor">Our Doctors</a></li>
+                <li><a href="#dept">Departments</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Follow Us</h4>
+            <div class="social-links">
+                <a href="https://www.facebook.com/">Facebook</a>
+                <a href="https://www.instagram.com/aishwarya_shevkar/">Instagram</a>
+                <a href="https://www.linkedin.com/in/aishwarya-shevkar-821841193/">LinkedIn</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Orchard Hill Hospital. All Rights Reserved.</p>
+    </div>
+</div>
+
+
+        
+        
+     
+    </ui:define>
+
+</ui:composition>

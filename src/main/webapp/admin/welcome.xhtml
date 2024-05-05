@@ -12,7 +12,8 @@
 
     <ui:define name="content">
         Welcome #{loginController.authenticatedUser}! to the Admin section application
-        
+        <h:link outcome="/admin/createUser.xhtml" value="Create a New patient" />
+
         <h:dataTable 
             styleClass="table table-hover table-bordered"
             value="#{patientService.findAll()}" 

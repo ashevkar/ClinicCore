@@ -2,19 +2,22 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-                template="./WEB-INF/templates/publicTemplate.xhtml"
+                template="./WEB-INF/templates/authenticatedTemplate.xhtml"
                 xmlns:h="jakarta.faces.html"
                 xmlns:p="jakarta.faces.passthrough">
 
     <ui:define name="title">
-        Login Page
+        Login Page 
+        
     </ui:define>
 
     <ui:define name="content">
         <main class="form-signin w-100 m-auto">
+            
+            <a href="apidocs/index.html">apidocs</a>
 
             <h:form styleClass="form-signin">
-            <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+            <h1 class="h3 mb-3 fw-normal">Please log in</h1>
 
                 <h:panelGroup styleClass="form-floating" layout="block">
                     <h:inputText binding="#{uname}" 
@@ -37,11 +40,16 @@
                     <h:message for="password" errorStyle="color: red" infoStyle="color: green"/>
                 </h:panelGroup>
            
-                <h:commandButton styleClass="btn btn-primary w-100 py-2" 
+            
+            <h:commandButton styleClass="btn btn-primary w-100 py-2" style="background-color: #2EAB90;"
                                  value="Login" 
                                  action="#{loginController.doLogin()}" />
+                
+                <!--<p>Don't have an account? <h:link value="Sign Up" outcome="/signup" /></p>-->
+
             
-                <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2024</p>
+                <p class="mt-5 mb-3 text-body-secondary">&copy; Project by Aishwarya Shevkar</p>
+                
            
             
             

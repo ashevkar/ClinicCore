@@ -40,6 +40,9 @@ public class LoginController {
 
     private User user;
 
+    /**
+     *
+     */
     public LoginController() {
     }
 
@@ -49,22 +52,50 @@ public class LoginController {
         user = new User();
     }
 
+    /**
+     *
+     * @return
+     */
     public String getAuthenticatedUser() {
         return securityContext.getCallerPrincipal().getName();
     }
+
+    /**
+     *
+     * @return
+     */
     public boolean isPatient(){
         return securityContext.isCallerInRole("PATIENT_ROLE");
     }
+
+    /**
+     *
+     * @return
+     */
     public boolean isHospital(){
         return securityContext.isCallerInRole("HOSPITAL_ROLE");
     }
+
+    /**
+     *
+     * @return
+     */
     public boolean isAdmin(){
         return securityContext.isCallerInRole("ADMIN_ROLE");
     }
+
+    /**
+     *
+     * @return
+     */
     public boolean isDoctor(){
         return securityContext.isCallerInRole("DOCTOR_ROLE");
     }
 
+    /**
+     *
+     * @return
+     */
     public String doLogin() {
         LOG.info("LoginController.doLogin");
 
@@ -98,6 +129,10 @@ public class LoginController {
 
     }
 
+    /**
+     *
+     * @return
+     */
     public String doLogout() {
         LOG.info("LoginController.doLogout");
 
@@ -112,10 +147,18 @@ public class LoginController {
         return "/login.xhtml?faces-redirect=true";
     }
 
+    /**
+     *
+     * @return
+     */
     public User getUser() {
         return user;
     }
 
+    /**
+     *
+     * @param user
+     */
     public void setUser(User user) {
         this.user = user;
     }

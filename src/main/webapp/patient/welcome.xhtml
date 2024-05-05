@@ -44,8 +44,6 @@
                 <h:form>
                     <h:commandButton value="view" action="#{patientController.viewPatientPage(patient)}" />
                     <h:commandButton value="edit" action="#{patientController.editPatientPage(patient)}" />
-                    <h:commandButton value="delete" action="#{patientController.deletePatientPage(patient)}" />
-
                     <h:commandButton value="Schedule Appointment" action="#{patientAppointmentController.scheduleAppointmentPage(patient)}" />
 
                 </h:form>
@@ -76,16 +74,23 @@
                 <f:convertDateTime type="localTime" dateStyle="full"/>
                 </h:outputText>
             </h:column>         
-                        
+                    
+            <h:column>
+                <f:facet name="header"> Patient name</f:facet>
+                <h:outputText value="#{appointment.patient.name}"/>
+            </h:column>
+                
             <h:column>
                 <f:facet name="header"> Doctor name </f:facet>
                 <h:outputText value="#{appointment.doctor.name}"/>            
             </h:column>
             
-             <h:column>
-                <f:facet name="header"> Patient name</f:facet>
-                <h:outputText value="#{appointment.patient.name}"/>
+                <h:column>
+                <f:facet name="header"> Hospital name</f:facet>
+                <h:outputText value="#{appointment.doctor.hospital.name}"/>
             </h:column>
+            
+             
             
             <h:column>
                 <h:form>

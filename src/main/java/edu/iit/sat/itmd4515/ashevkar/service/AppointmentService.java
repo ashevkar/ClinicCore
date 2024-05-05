@@ -19,15 +19,26 @@ import java.util.List;
 @Stateless
 public class AppointmentService extends AbstractService<Appointment>{   
 
+    /**
+     *
+     */
     public AppointmentService() {
         super(Appointment.class);
         
     }
     
+    /**
+     *
+     * @return
+     */
     public List<Appointment> findAll(){
         return super.findAll("Appointment.findAll");
     }
     
+    /**
+     *
+     * @param appointment
+     */
     public void editAppointment(Appointment appointment){
         Appointment managedRef = em.getReference(Appointment.class, appointment.getId());
         managedRef.setDate(appointment.getDate());
@@ -38,6 +49,10 @@ public class AppointmentService extends AbstractService<Appointment>{
         em.merge(managedRef);
     }
     
+    /**
+     *
+     * @param appt
+     */
     public void scheduleAppointment(Appointment appt){
         Appointment newAppt = new Appointment(appt.getDate(), appt.getTime());
 
@@ -47,6 +62,28 @@ public class AppointmentService extends AbstractService<Appointment>{
         );  
         em.persist(newAppt);
     }
+    
+    /**
+     *
+     * @param appt
+     */
+    public void deleteAppointment(Appointment appt) {
+        Appointment appointment = em.find(Appointment.class, appt.getId());
+        
+            em.remove(appointment);
+            
+        
+    }
+
+    /**
+     *
+     * @param id
+     * @return
+     */
+    public Appointment findAppointmentById(Long id) {
+        return em.find(Appointment.class, id);
+    }
+    
     
     
 }

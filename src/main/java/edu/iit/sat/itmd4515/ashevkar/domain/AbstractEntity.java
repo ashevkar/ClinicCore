@@ -19,6 +19,10 @@ import java.time.LocalDateTime;
  */
 @MappedSuperclass
 public class AbstractEntity {
+
+    /**
+     *
+     */
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)   
     protected Long id;
@@ -30,11 +34,17 @@ public class AbstractEntity {
     
     private LocalDateTime modifiedTimestamp;
     
+    /**
+     *
+     */
     @PrePersist
     public void initializeCreatedTimestamp() {
         this.createdTimestamp = LocalDateTime.now();
     }
     
+    /**
+     *
+     */
     @PreUpdate
     public void initializeModifiedTimestamp() {
         this.modifiedTimestamp = LocalDateTime.now();

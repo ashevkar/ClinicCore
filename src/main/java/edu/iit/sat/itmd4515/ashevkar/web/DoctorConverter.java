@@ -20,11 +20,26 @@ import jakarta.faces.convert.FacesConverter;
 public class DoctorConverter implements Converter<Doctor> {
 
     @EJB DoctorService doctorSvc;
+
+    /**
+     *
+     * @param context
+     * @param component
+     * @param value
+     * @return
+     */
     @Override
     public Doctor getAsObject(FacesContext context, UIComponent component, String value) {
         return doctorSvc.read(Long.valueOf(value));            
     }
 
+    /**
+     *
+     * @param context
+     * @param component
+     * @param value
+     * @return
+     */
     @Override
     public String getAsString(FacesContext context, UIComponent component, Doctor value) {
         return String.valueOf(value.getId());

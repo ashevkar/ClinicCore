@@ -28,6 +28,9 @@ public class WelcomeController {
     
     private Hospital hospital;
     
+    /**
+     *
+     */
     public WelcomeController() {
     }
     @PostConstruct
@@ -36,14 +39,26 @@ public class WelcomeController {
         hospital =hospitalSvc.findByUsername(loginController.getAuthenticatedUser());
            
     }
+
+    /**
+     *
+     */
     public void refreshModel(){
         hospital =hospitalSvc.findByUsername(loginController.getAuthenticatedUser());
     }
     
+    /**
+     *
+     * @return
+     */
     public Hospital getHospital() {
         return hospital;
     }
 
+    /**
+     *
+     * @param hospital
+     */
     public void setHospital(Hospital hospital) {
         this.hospital = hospital;
     }

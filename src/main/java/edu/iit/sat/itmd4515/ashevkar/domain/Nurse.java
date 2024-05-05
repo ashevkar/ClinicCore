@@ -18,12 +18,19 @@ import java.util.Objects;
 @NamedQuery(name = "Nurse.findAll", query = "select n from Nurse n")
 public class Nurse extends AbstractEntity{
    
-       
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return "Nurse{" + "id=" + id + ", name=" + name + '}';
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int hashCode() {
         int hash = 3;
@@ -31,6 +38,11 @@ public class Nurse extends AbstractEntity{
         return hash;
     }
 
+    /**
+     *
+     * @param obj
+     * @return
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -49,10 +61,17 @@ public class Nurse extends AbstractEntity{
 
     private String name;
 
+    /**
+     *
+     * @param name
+     */
     public Nurse(String name) {
         this.name = name;
     }
 
+    /**
+     *
+     */
     public Nurse() {
     }
 

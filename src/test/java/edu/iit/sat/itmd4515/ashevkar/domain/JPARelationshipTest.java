@@ -17,6 +17,9 @@ import org.junit.jupiter.api.Test;
  */
 public class JPARelationshipTest extends AbstractJPATest {
     
+    /**
+     *
+     */
     @Test
     public void uniDirectionalRelationshipTest(){
         
@@ -40,6 +43,10 @@ public class JPARelationshipTest extends AbstractJPATest {
         assertEquals("Noble", readBackFromDatabase.getHospital().getName());
         
     }
+
+    /**
+     *
+     */
     @Test
     public void biDirectionalRelationshipTest(){
         Patient p= new Patient("Saniya", LocalDate.of(2000, 02, 28), PatientGender.FEMALE);   

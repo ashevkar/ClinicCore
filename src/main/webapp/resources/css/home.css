@@ -1,0 +1,199 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: lightblue;
+    color: #333;
+    line-height: 1.6;
+    background-color: white;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    color: #20B2AA;
+    
+}
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.75rem;
+    margin-bottom: 15px;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+.container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0;
+    padding: 0 0;
+    
+}
+
+.section {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+   
+}
+.hero-image {
+    width: 100%;
+    background-image: url('https://themewagon.github.io/orthoc/images/hero-bg.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    
+}
+
+.hero-text {
+    text-align: center;
+    color: white;
+
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    color: #fff;
+}
+
+.hero-text p {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+ Navigation Styles 
+.navbar {
+    background-color: #20B2AA;
+    padding: 10px 0;
+    color: white;
+    margin-bottom: 0;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+@media (max-width: 768px) {
+    .hero-image {
+        height: 60vh; /* Smaller height on mobile devices */
+        background-size: cover;
+    }
+}
+
+
+#flex-section2 ul {
+	display: flex;
+	justify-content: space-between;
+	margin: 0;
+	padding: 0px 0px;
+	list-style: none;
+}
+
+#flex-section2 li {
+	flex: 2;  
+        text-align: center;
+  }
+  #flex-section2 img {
+    width: 100%; /* Makes the image fill the width of its container */
+    height: auto; /* Maintains the aspect ratio of the image */
+    display: block; /* Removes bottom margin/gap under the image that occurs due to inline display */
+    padding: 0px 50px;
+}
+#flex-section2 .item1 {
+	order: 1; 
+}
+#flex-section2 .item2 {
+	order: 3; 
+}
+#flex-section2 .item3 {
+	order: 2; 
+}
+.footer {
+    background-color: #20B2AA;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.footer-section h4 {
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #DAA520;
+}
+
+.footer-bottom {
+    margin-top: 10px;
+    font-size: 0.8rem;
+}
+
+.social-links a {
+    display: inline-block;
+    margin-right: 10px;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #DAA520;
+}
+
+@media (max-width: 100%) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-section {
+        margin-bottom: 20px;
+    }
+}

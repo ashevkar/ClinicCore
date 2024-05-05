@@ -51,8 +51,7 @@
             </p>
 
             <p>
-                <h:panelGroup layout="block" >
-                    <!--rendered="#{cc.attrs.admin}"-->
+                <h:panelGroup layout="block" rendered="#{cc.attrs.admin}">
                     <h:outputLabel value="Patient name:-" for="adminPatient"/>
 
                     <h:selectOneMenu 
@@ -72,16 +71,16 @@
                 </h:panelGroup>
             </p>
             
-<!--            <p>
-                <h:panelGroup layout="block" rendered="#{cc.attrs.admin}">
+            <p>
+                <h:panelGroup layout="block" rendered="#{not cc.attrs.admin}">
                     <h:outputLabel value="Patient ID:- #{cc.attrs.appointment.patient.id} (#{cc.attrs.appointment.patient.name})" for="patientId" />
                     <h:inputHidden id="patientId" value="#{cc.attrs.appointment.patient.id}" />
                     <h:message for="patientId" errorStyle="color: red" infoStyle="color: green"/>
                 </h:panelGroup>
-            </p> -->
+            </p> 
             
             <p>
-                <h:panelGroup layout="block">
+                <h:panelGroup layout="block" rendered="#{not cc.attrs.admin}">
                     <h:outputLabel value="Doctor name:-" for="doctor"/>
 
                     <h:selectOneMenu 

@@ -11,12 +11,21 @@ import jakarta.ws.rs.core.Response;
 @Path("/hospitals")
 public class DoctorHospitalBaseResource {
     
+    /**
+     *
+     * @return
+     */
     @GET
     public Response ping(){
         return Response
                 .ok("ping Jakarta EE")
                 .build();
     }
+
+    /**
+     *
+     * @return
+     */
     @Path("/version")
     @GET
     public Response version(){

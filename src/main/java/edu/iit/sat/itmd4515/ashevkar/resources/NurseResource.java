@@ -29,12 +29,21 @@ public class NurseResource {
     @EJB 
     NurseService nurseSvc;
     
+    /**
+     *
+     * @return
+     */
     @GET
     @Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
     public List<Nurse> getAllNurse(){
         return nurseSvc.findAll();
     }
     
+    /**
+     *
+     * @param n
+     * @return
+     */
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
@@ -45,6 +54,11 @@ public class NurseResource {
         return n;
     }
     
+    /**
+     *
+     * @param id
+     * @return
+     */
     @GET
     @Path("/id/{id}")
     public Nurse getNurseById(@PathParam("id")Long id){

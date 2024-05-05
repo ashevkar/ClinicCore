@@ -15,6 +15,9 @@ import org.junit.jupiter.api.Test;
  */
 public class PatientJPATest extends AbstractJPATest{
     
+    /**
+     *
+     */
     @Test
     public void createTest(){
         Patient p2= new Patient("Aishwarya", LocalDate.of(2010, 11, 11), PatientGender.FEMALE);    
@@ -29,6 +32,9 @@ public class PatientJPATest extends AbstractJPATest{
         assertEquals(p2.getId(), readBackFromDatabaseForAssertion.getId());
     }
     
+    /**
+     *
+     */
     @Test
     public void readTest(){
         
@@ -41,6 +47,9 @@ public class PatientJPATest extends AbstractJPATest{
         assertEquals(p3.getId(), readBackFromDatabaseForAssertion.getId());
     }
     
+    /**
+     *
+     */
     @Test
     public void updateTest(){
         Patient p = em.createQuery("select p from Patient p where p.name = 'Ruchika'", 
@@ -60,6 +69,9 @@ public class PatientJPATest extends AbstractJPATest{
         assertEquals(newBirthDay, readBackFromDatabaseForAssertion.getBirthDate());
     }  
     
+    /**
+     *
+     */
     @Test
     public void deleteTest(){    
         Patient p4 = em.createQuery("select p from Patient p where p.name = 'Aishwarya'", 

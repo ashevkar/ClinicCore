@@ -4,7 +4,9 @@
  */
 package edu.iit.sat.itmd4515.ashevkar.web;
 
+import edu.iit.sat.itmd4515.ashevkar.domain.Appointment;
 import edu.iit.sat.itmd4515.ashevkar.domain.Doctor;
+import edu.iit.sat.itmd4515.ashevkar.service.AppointmentService;
 import edu.iit.sat.itmd4515.ashevkar.service.DoctorService;
 import jakarta.annotation.PostConstruct;
 import jakarta.ejb.EJB;
@@ -24,13 +26,19 @@ public class WelcomeDoctorController {
     private static final Logger LOG = Logger.getLogger(WelcomeDoctorController.class.getName());
 
     @EJB DoctorService doctorSvc;
+    @EJB AppointmentService appointmentSvc;
+    
     @Inject LoginController loginController;
     
+    private Appointment appointment;
     private Doctor doctor;
 
+    /**
+     *
+     */
     public WelcomeDoctorController() {
     }
-    
+
    
     @PostConstruct
     private void postConstruct(){
@@ -39,16 +47,28 @@ public class WelcomeDoctorController {
         LOG.info("WelcomeDoctorController.postConstruct: " + doctor.toString());
 
     }
+
+    /**
+     *
+     */
     public void refreshDoctorModel(){
         doctor = doctorSvc.findByUsername(loginController.getAuthenticatedUser());
     }
-
+          
+    /**
+     *
+     * @return
+     */
     public Doctor getDoctor() {
         return doctor;
     }
 
+    /**
+     *
+     * @param doctor
+     */
     public void setDoctor(Doctor doctor) {
         this.doctor = doctor;
     }
-  
+
 }

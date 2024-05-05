@@ -15,11 +15,18 @@ import java.util.List;
 @Stateless
 public class NurseService extends AbstractService<Nurse>{   
 
+    /**
+     *
+     */
     public NurseService() {
         super(Nurse.class);
         
     }
     
+    /**
+     *
+     * @return
+     */
     public List<Nurse> findAll(){
         return super.findAll("Nurse.findAll");
     }

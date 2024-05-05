@@ -31,12 +31,19 @@ public class User {
     @NotBlank(message= "Please enter a Password")
     private String password;
 
-    
-
+    /**
+     *
+     * @param userName
+     * @param password
+     */
     public User(String userName, String password) {
         this.userName = userName;
         this.password = password;
     }
+
+    /**
+     *
+     */
     public User() {
     }
 
@@ -47,11 +54,19 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "GROUPNAME"))
         private List<Group> groups = new ArrayList<>();
     
+    /**
+     *
+     * @param g
+     */
     public void addGroup(Group g){
         this.groups.add(g);
         g.getUsers().add(this);
     }
 
+    /**
+     *
+     * @param g
+     */
     public void addRemove(Group g){
         this.groups.remove(g);
         g.getUsers().remove(this);

@@ -32,6 +32,9 @@ public class WelcomePatientController {
     private Patient patient;
     private Hospital hospital;
     
+    /**
+     *
+     */
     public WelcomePatientController() {
     }
     @PostConstruct
@@ -39,17 +42,25 @@ public class WelcomePatientController {
         patient = new Patient();
         LOG.info("WelcomePatientController.postConstruct");
 
-        patient =patientSvc.findByUsername(loginController.getAuthenticatedUser());  
+        patient =patientSvc.findByUsername(loginController.getAuthenticatedUser());     
     }
-
+    
+    /**
+     *
+     * @return
+     */
     public Patient getPatient() {
         return patient;
     }
 
+    /**
+     *
+     * @param patient
+     */
     public void setPatient(Patient patient) {
         this.patient = patient;
     }
-    
+ 
     
     
 }

@@ -19,11 +19,26 @@ import jakarta.faces.convert.FacesConverter;
 @FacesConverter(value = "patientConverter", managed=true)
 public class PatientConverter implements Converter<Patient>{
     @EJB PatientService patientSvc;
+
+    /**
+     *
+     * @param context
+     * @param component
+     * @param value
+     * @return
+     */
     @Override
     public Patient getAsObject(FacesContext context, UIComponent component, String value) {
         return patientSvc.read(Long.valueOf(value));
     }
 
+    /**
+     *
+     * @param context
+     * @param component
+     * @param value
+     * @return
+     */
     @Override
     public String getAsString(FacesContext context, UIComponent component, Patient value) {
         return String.valueOf(value.getId());

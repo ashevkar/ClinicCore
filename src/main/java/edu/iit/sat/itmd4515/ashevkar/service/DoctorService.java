@@ -17,16 +17,28 @@ import java.util.List;
 @Stateless
 public class DoctorService extends AbstractService<Doctor>{   
 
+    /**
+     *
+     */
     public DoctorService() {
         super(Doctor.class);
         
     }
     
+    /**
+     *
+     * @return
+     */
     public List<Doctor> findAll(){
         return super.findAll("Doctor.findAll");
     }
     
-     public Doctor findByUsername(String username){
+    /**
+     *
+     * @param username
+     * @return
+     */
+    public Doctor findByUsername(String username){
         return em.createNamedQuery("Doctor.findByUsername",Doctor.class).setParameter("uname", username).getSingleResult();
     } 
 }

@@ -9,8 +9,20 @@ package edu.iit.sat.itmd4515.ashevkar.domain;
  * @author ashevkar
  */
 public enum PatientGender {
+
+    /**
+     *
+     */
     MALE("Male"), 
+
+    /**
+     *
+     */
     FEMALE("Female"), 
+
+    /**
+     *
+     */
     OTHER("Other");
     
     private String label;
@@ -19,6 +31,10 @@ public enum PatientGender {
         this.label = label;
     }
     
+    /**
+     *
+     * @return
+     */
     public String getLabel(){
         return label;
     }

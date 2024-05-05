@@ -45,34 +45,61 @@ public class Appointment extends AbstractEntity{
     @JoinColumn(name = "DOCTOR_ID")
     private Doctor doctor;
 
-    
+    /**
+     *
+     * @return
+     */
     public Doctor getDoctor() {
         return doctor;
     }
 
-    
+    /**
+     *
+     * @param doctor
+     */
     public void setDoctor(Doctor doctor) {
         this.doctor = doctor;
     }
     
-    
+    /**
+     *
+     * @return
+     */
     public Patient getPatient() {
         return patient;
     }
     
+    /**
+     *
+     * @param patient
+     */
     public void setPatient(Patient patient) {
         this.patient = patient;
     }
     
+    /**
+     *
+     * @param date
+     * @param time
+     */
     public Appointment(LocalDate date, LocalTime time) {
         this.date = date;
         this.time = time;
     }
 
+    /**
+     *
+     */
     public Appointment() {
     }
     
     //helper method to manage jpa
+
+    /**
+     *
+     * @param d
+     * @param p
+     */
     public void scheduleApt(Doctor d, Patient p){
         this.doctor= d;
         this.patient= p;
@@ -84,6 +111,10 @@ public class Appointment extends AbstractEntity{
             d.getAppointments().add(this);
         }
     }
+
+    /**
+     *
+     */
     public void cancelApt(){
         if(this.patient.getAppointments().contains(this)){
             this.patient.getAppointments().remove(this);
@@ -93,11 +124,19 @@ public class Appointment extends AbstractEntity{
         }     
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return "Appointment{" + "date=" + date + ", time=" + time + ", patient=" + patient + ", doctor=" + doctor + '}';
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int hashCode() {
         int hash = 7;
@@ -105,6 +144,11 @@ public class Appointment extends AbstractEntity{
         return hash;
     }
 
+    /**
+     *
+     * @param obj
+     * @return
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -125,23 +169,34 @@ public class Appointment extends AbstractEntity{
         return Objects.equals(this.id, other.id);
     }
 
-    
-    
+    /**
+     *
+     * @return
+     */
     public LocalDate getDate() {
         return date;
     }
 
-    
+    /**
+     *
+     * @param date
+     */
     public void setDate(LocalDate date) {
         this.date = date;
     }
 
-    
+    /**
+     *
+     * @return
+     */
     public LocalTime getTime() {
         return time;
     }
 
-    
+    /**
+     *
+     * @param time
+     */
     public void setTime(LocalTime time) {
         this.time = time;
     }

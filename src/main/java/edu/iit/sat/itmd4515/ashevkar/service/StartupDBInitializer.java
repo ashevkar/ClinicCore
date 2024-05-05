@@ -49,6 +49,9 @@ public class StartupDBInitializer {
     @EJB
     GroupService groupSvc;
     
+    /**
+     *
+     */
     public StartupDBInitializer() {
     }
     
@@ -89,7 +92,6 @@ public class StartupDBInitializer {
         
         User doctor1 = new User("doctor1","doctor1");
         doctor1.addGroup(doctorGroup);
-//        doctor1.addGroup(patientGroup);
         userSvc.create(doctor1);
         
         User doctor2 = new User("doctor2","doctor2");
@@ -149,11 +151,11 @@ public class StartupDBInitializer {
         doctorSvc.create(d4);
         
         Appointment a1 = new Appointment(LocalDate.of(2024, 6, 11), LocalTime.of(10, 45));
-        a1.scheduleApt(d4, p1);
+        a1.scheduleApt(d1, p1);
         Appointment a2 = new Appointment(LocalDate.of(2024, 7, 20), LocalTime.of(8, 30));
         a2.scheduleApt(d1, p2);
         Appointment a3 = new Appointment(LocalDate.of(2024, 8, 12), LocalTime.of(10, 45));
-        a3.scheduleApt(d3, p4);
+        a3.scheduleApt(d3, p1);
         Appointment a4 = new Appointment(LocalDate.of(2024, 6, 15), LocalTime.of(8, 30));
         a4.scheduleApt(d2, p5);
         

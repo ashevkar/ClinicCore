@@ -23,6 +23,9 @@ public class PatientValidationTest {
     private final ValidatorFactory validatorFactory = Validation.buildDefaultValidatorFactory();
     private final Validator validator = validatorFactory.getValidator();
 
+    /**
+     *
+     */
     @Test
     public void validateName() {
         Patient patient = new Patient("John", LocalDate.of(1990, 5, 15), PatientGender.MALE);
@@ -31,6 +34,9 @@ public class PatientValidationTest {
         assertTrue(violations.isEmpty(), "Name should not have violations");
     }
 
+    /**
+     *
+     */
     @Test
     public void validateInvalidName() {
         Patient patient = new Patient("", LocalDate.of(1990, 5, 15), PatientGender.MALE);
@@ -39,6 +45,9 @@ public class PatientValidationTest {
         assertFalse(violations.isEmpty(), "Empty name should result in violations");
     }
 
+    /**
+     *
+     */
     @Test
     public void validateBirthDate() {
         Patient patient = new Patient("Alice", LocalDate.of(1995, 10, 20), PatientGender.FEMALE);
@@ -47,6 +56,9 @@ public class PatientValidationTest {
         assertTrue(violations.isEmpty(), "Birth date should not have violations");
     }
 
+    /**
+     *
+     */
     @Test
     public void validateFutureBirthDate() {
         Patient patient = new Patient("Bob", LocalDate.now().plusDays(1), PatientGender.MALE);
@@ -56,6 +68,10 @@ public class PatientValidationTest {
     }
 
     // Sunny-day test for other constraints
+
+    /**
+     *
+     */
     @Test
     public void validateValidPatient() {
         Patient patient = new Patient("Eva", LocalDate.of(1980, 3, 25), PatientGender.FEMALE);
@@ -65,6 +81,10 @@ public class PatientValidationTest {
     }
 
     // Rainy-day test for other constraints
+
+    /**
+     *
+     */
     @Test
     public void validateInvalidPatient() {
         Patient patient = new Patient("", LocalDate.now().minusDays(1), null);

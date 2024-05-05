@@ -26,11 +26,19 @@ public class Group {
 
     private String groupDescription;
 
+    /**
+     *
+     * @param groupName
+     * @param groupDescription
+     */
     public Group(String groupName, String groupDescription) {
         this.groupName = groupName;
         this.groupDescription = groupDescription;
     }
 
+    /**
+     *
+     */
     public Group() {
     }
 

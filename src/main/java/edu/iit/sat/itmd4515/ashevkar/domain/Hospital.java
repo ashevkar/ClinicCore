@@ -49,41 +49,90 @@ public class Hospital extends AbstractEntity{
     @ManyToMany(mappedBy = "hospitals")
     private List<Patient> patients = new ArrayList<>();
       
+    /**
+     *
+     * @return
+     */
     public User getUser() {
         return user;
     } 
+
+    /**
+     *
+     * @param user
+     */
     public void setUser(User user) {
         this.user = user;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<Patient> getPatients() {
         return patients;
     }
+
+    /**
+     *
+     * @param patients
+     */
     public void setPatients(List<Patient> patients) {
         this.patients = patients;
     }
   
+    /**
+     *
+     * @return
+     */
     public String getContactNumber() {
         return contactNumber;
     }  
+
+    /**
+     *
+     * @param contactNumber
+     */
     public void setContactNumber(String contactNumber) {
         this.contactNumber = contactNumber;
     }
   
+    /**
+     *
+     * @return
+     */
     public String getAddress() {
         return address;
     }
+
+    /**
+     *
+     * @param address
+     */
     public void setAddress(String address) {
         this.address = address;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getName() {
         return name;
     }  
+
+    /**
+     *
+     * @param name
+     */
     public void setName(String name) {
         this.name = name;
     }
     
+    /**
+     *
+     * @param p
+     */
     public void addPatient(Patient p){     
         if(! this.patients.contains(p)){
             this.patients.add(p);
@@ -92,6 +141,11 @@ public class Hospital extends AbstractEntity{
             p.getHospitals().add(this);
         }
     }
+
+    /**
+     *
+     * @param p
+     */
     public void removePatient(Patient p){        
         if(this.patients.contains(p)){
             this.patients.remove(p);
@@ -101,20 +155,37 @@ public class Hospital extends AbstractEntity{
         }
     }
     
+    /**
+     *
+     * @param name
+     * @param address
+     * @param contactNumber
+     */
     public Hospital(String name, String address, String contactNumber) {
         this.name = name;
         this.address = address;
         this.contactNumber = contactNumber;
     }
 
+    /**
+     *
+     */
     public Hospital() {
     }
     
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return "Hospital{" + "id=" + id + ", name=" + name + ", address=" + address + ", contactNumber=" + contactNumber + '}';
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int hashCode() {
         int hash = 3;
@@ -122,6 +193,11 @@ public class Hospital extends AbstractEntity{
         return hash;
     }
 
+    /**
+     *
+     * @param obj
+     * @return
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {

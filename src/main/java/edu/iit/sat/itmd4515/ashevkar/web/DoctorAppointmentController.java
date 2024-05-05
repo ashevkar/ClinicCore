@@ -32,6 +32,9 @@ public class DoctorAppointmentController {
     
     private Appointment appointment;
     
+    /**
+     *
+     */
     public DoctorAppointmentController() {
     }
     @PostConstruct
@@ -42,33 +45,65 @@ public class DoctorAppointmentController {
         appointment.setDoctor(new Doctor());
         appointment.setDoctor(dwc.getDoctor());
     }
+
+    /**
+     *
+     * @param appointment
+     * @return
+     */
     public String viewAppointmentPage(Appointment appointment){  
         this.appointment = appointment;
         LOG.info("Inside DoctorAppointmentController viewAppointmentPage postConstruct" + appointment.toString());
         return "/doctor/readAppointment.xhtml"; 
     }
     
+    /**
+     *
+     * @param appointment
+     * @return
+     */
     public String editAppointmentPage(Appointment appointment){    
         this.appointment = appointment;
         LOG.info("Inside DoctorAppointmentController editAppointmentPage postConstruct" + appointment.toString());
         return "/doctor/editAppointment.xhtml"; 
     }
     
+    /**
+     *
+     * @param appointment
+     * @return
+     */
     public String deleteAppointmentPage(Appointment appointment){ 
         this.appointment = appointment;
         LOG.info("Inside DoctorAppointmentController deleteAppointmentPage postConstruct" + appointment.toString());
-        return "/doctor/welcome.xhtml"; 
+        return "/doctor/deleteAppointment.xhtml"; 
     }
+
+    /**
+     *
+     * @param p
+     * @return
+     */
     public String scheduleAppointmentPage(Patient p){
         appointment.setPatient(p);
         LOG.info("Inside DoctorAppointmentController scheduleAppointmentPage postConstruct" + appointment.toString());
         return "/doctor/scheduleAppointment.xhtml"; 
     }
+
+    /**
+     *
+     * @param p
+     * @return
+     */
     public String cancelAppointmentPage(Patient p){    
         LOG.info("Inside DoctorAppointmentController cancelAppointmentPage postConstruct" + appointment.toString());
         return "/doctor/welcome.xhtml"; 
     }
     
+    /**
+     *
+     * @return
+     */
     public String scheduleAppointment(){    
         LOG.info("Inside DoctorAppointmentController scheduleAppointment postConstruct" + appointment.toString());
         appointmentSvc.scheduleAppointment(appointment);
@@ -76,16 +111,40 @@ public class DoctorAppointmentController {
         return "/doctor/welcome.xhtml"; 
     }
     
+    /**
+     *
+     * @return
+     */
     public String editAppointment(){    
         LOG.info("Inside DoctorAppointmentController editAppointment postConstruct" + appointment.toString());
         appointmentSvc.editAppointment(appointment);
         dwc.refreshDoctorModel();
         return "/doctor/welcome.xhtml"; 
     }
+    
+    /**
+     *
+     * @return
+     */
+    public String deleteAppointment(){ 
+        LOG.info("Inside DoctorAppointmentController deleteAppointment postConstruct" + appointment.toString());
+        appointmentSvc.deleteAppointment(appointment);
+        dwc.refreshDoctorModel();
+        return  "/doctor/welcome.xhtml?faces-redirect=true";        
+    }
 
+    /**
+     *
+     * @return
+     */
     public Appointment getAppointment() {
         return appointment;
     }
+
+    /**
+     *
+     * @param appointment
+     */
     public void setAppointment(Appointment appointment) {
         this.appointment = appointment;
     }

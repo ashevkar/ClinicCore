@@ -4,8 +4,10 @@
  */
 package edu.iit.sat.itmd4515.ashevkar.web;
 
+import edu.iit.sat.itmd4515.ashevkar.domain.Hospital;
 import edu.iit.sat.itmd4515.ashevkar.domain.Patient;
 import edu.iit.sat.itmd4515.ashevkar.domain.PatientGender;
+import edu.iit.sat.itmd4515.ashevkar.security.User;
 import edu.iit.sat.itmd4515.ashevkar.service.HospitalService;
 import edu.iit.sat.itmd4515.ashevkar.service.PatientService;
 import jakarta.annotation.PostConstruct;
@@ -32,7 +34,11 @@ private static final Logger LOG = Logger.getLogger(PatientController.class.getNa
     @Inject LoginController loginController;
     
     private Patient patient;
+    private Hospital hospital;
 
+    /**
+     *
+     */
     public PatientController() {
     }
 
@@ -43,32 +49,62 @@ private static final Logger LOG = Logger.getLogger(PatientController.class.getNa
         LOG.info("------------------------------------------------------------------------------------");
     }
 
+    /**
+     *
+     * @return
+     */
     public PatientGender[] getPatientGender(){
         return PatientGender.values();
     }
     
+    /**
+     *
+     * @param p
+     * @return
+     */
     public String viewPatientPage(Patient p){
         this.patient = p;
         LOG.info("inside viewPatientPage with model"+ p.toString());
         return "/patient/viewPatient.xhtml";
     }
     
+    /**
+     *
+     * @param p
+     * @return
+     */
     public String editPatientPage(Patient p){
         this.patient = p;
         LOG.info("inside editPatientPage with model"+ p.toString());
         return "/patient/editPatient.xhtml";
     }
+
+    /**
+     *
+     * @param p
+     * @return
+     */
     public String editHospitalPatientPage(Patient p){
         this.patient = p;
         LOG.info("inside editPatientPage with model"+ p.toString());
         return "/hospital/editPatient.xhtml";
     }
+
+    /**
+     *
+     * @param p
+     * @return
+     */
     public String deletePatientPage(Patient p){
         this.patient = p;
         LOG.info("inside deletePatientPage with model"+ p.toString());
         return "/hospital/deletePatient.xhtml";
     }
 
+    /**
+     *
+     * @return
+     */
     public String savePatient() {
         LOG.info("savePatient has been invoked with model: " + this.patient.toString());
 //        patientSvc.create(patient);
@@ -78,12 +114,21 @@ private static final Logger LOG = Logger.getLogger(PatientController.class.getNa
         return "welcome.xhtml";
     }
     
+    /**
+     *
+     * @return
+     */
     public String editPatient(){
         LOG.info("editPatient has been invoked with model: " + this.patient.toString());
         patientSvc.editPatient(patient);
         pc.refreshPatientModel();
         return "/patient/welcome.xhtml";
     }
+
+    /**
+     *
+     * @return
+     */
     public String editHospitalPatient(){
         LOG.info("editPatient has been invoked with model: " + this.patient.toString());
         patientSvc.editPatient(patient);
@@ -91,21 +136,36 @@ private static final Logger LOG = Logger.getLogger(PatientController.class.getNa
         return "/hospital/welcome.xhtml";
     }
     
+    /**
+     *
+     * @return
+     */
     public String deletePatient(){
         LOG.info("deletePatient has been invoked with model: " + this.patient.toString());
+        patientSvc.deletePatient(patient);
         wc.refreshModel();
-
         return "/hospital/welcome.xhtml";
     }
 
+    /**
+     *
+     */
     public void refreshPatientModel(){
         patient =patientSvc.findByUsername(loginController.getAuthenticatedUser());  
     }
     
+    /**
+     *
+     * @return
+     */
     public Patient getPatient() {
         return patient;
     }
 
+    /**
+     *
+     * @param patient
+     */
     public void setPatient(Patient patient) {
         this.patient = patient;
     }

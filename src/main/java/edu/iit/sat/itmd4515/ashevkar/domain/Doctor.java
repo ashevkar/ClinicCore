@@ -62,9 +62,18 @@ public class Doctor {
     
     private User user;
 
+    /**
+     *
+     * @return
+     */
     public User getUser() {
         return user;
     } 
+
+    /**
+     *
+     * @param user
+     */
     public void setUser(User user) {
         this.user = user;
     }
@@ -177,22 +186,39 @@ public class Doctor {
     }
 
 //    constructor
+
+    /**
+     *
+     * @param name
+     * @param specialization
+     * @param contactNumber
+     */
     public Doctor(String name, String specialization, Long contactNumber) {
         this.name = name;
         this.specialization = specialization;
         this.contactNumber = contactNumber;
     }
 //    constructor
+
+    /**
+     *
+     */
     public Doctor() {
     }
     
-    
-    
-        @Override
+    /**
+     *
+     * @return
+     */
+    @Override
     public String toString() {
         return "Doctor{" + "id=" + id + ", name=" + name + ", specialization=" + specialization + ", contactNumber=" + contactNumber + '}';
     }
     
+    /**
+     *
+     * @return
+     */
     @Override
     public int hashCode() {
         int hash = 7;
@@ -200,6 +226,11 @@ public class Doctor {
         return hash;
     }
 
+    /**
+     *
+     * @param obj
+     * @return
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {

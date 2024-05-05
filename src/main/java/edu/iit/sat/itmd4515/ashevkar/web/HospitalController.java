@@ -28,7 +28,9 @@ private static final Logger LOG = Logger.getLogger(HospitalController.class.getN
     
     private Hospital hospital;
 
-
+    /**
+     *
+     */
     public HospitalController() {
     }
 
@@ -38,12 +40,20 @@ private static final Logger LOG = Logger.getLogger(HospitalController.class.getN
         LOG.info("HospitalController.postConstruct");
     }
     
+    /**
+     *
+     * @return
+     */
     public String demoAction() {
         LOG.info("demoAction has been invoked with model: " + this.hospital.toString());
 
         return "confirmation.xhtml";
     }
 
+    /**
+     *
+     * @return
+     */
     public String saveHospital() {
         LOG.info("saveHospital has been invoked with model: " + this.hospital.toString());
 
@@ -53,10 +63,19 @@ private static final Logger LOG = Logger.getLogger(HospitalController.class.getN
         
         return "confirmation.xhtml";
     }
+
+    /**
+     *
+     * @return
+     */
     public Hospital getHospital() {
         return hospital;
     }
 
+    /**
+     *
+     * @param hospital
+     */
     public void setHospital(Hospital hospital) {
         this.hospital = hospital;
     }

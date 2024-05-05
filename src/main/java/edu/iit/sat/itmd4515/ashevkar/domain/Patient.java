@@ -57,14 +57,27 @@ public class Patient extends AbstractNamedEntity{
     @OneToOne
     @JoinColumn(name = "USERNAME")
     private User user;
-
+    
+    /**
+     *
+     * @return
+     */
     public User getUser() {
         return user;
     }
+
+    /**
+     *
+     * @param user
+     */
     public void setUser(User user) {
         this.user = user;
     }
     
+    /**
+     *
+     * @param h
+     */
     public void addHospital(Hospital h){        
         if(! this.hospitals.contains(h)){
             this.hospitals.add(h);
@@ -73,6 +86,11 @@ public class Patient extends AbstractNamedEntity{
             h.getPatients().add(this);
         }
     }
+
+    /**
+     *
+     * @param h
+     */
     public void removeHospital(Hospital h){        
         if(this.hospitals.contains(h)){
             this.hospitals.remove(h);
@@ -82,48 +100,113 @@ public class Patient extends AbstractNamedEntity{
         }
     }
 
-        
+    /**
+     *
+     * @return
+     */
     public List<Appointment> getAppointments() {
         return appointments;
     }
+
+    /**
+     *
+     * @param appointments
+     */
     public void setAppointments(List<Appointment> appointments) {
         this.appointments = appointments;
     }   
    
+    /**
+     *
+     * @return
+     */
     public List<Hospital> getHospitals() {
         return hospitals;
     }
+
+    /**
+     *
+     * @param hospitals
+     */
     public void setHospitals(List<Hospital> hospitals) {
         this.hospitals = hospitals;
     }
     
+    /**
+     *
+     * @return
+     */
     public PatientGender getGender() {
         return gender;
     }
+
+    /**
+     *
+     * @param gender
+     */
     public void setGender(PatientGender gender) {
         this.gender = gender;
     }
     
+    /**
+     *
+     * @return
+     */
     public LocalDate getBirthDate() {
         return birthDate;
     }
+
+    /**
+     *
+     * @param birthDate
+     */
     public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 
+    /**
+     *
+     * @param name
+     * @param birthDate
+     * @param gender
+     */
     public Patient(String name, LocalDate birthDate, PatientGender gender) {
         this.name = name;
         this.birthDate = birthDate;
         this.gender = gender;
     }
+
+    /**
+     *
+     * @param birthDate
+     * @param gender
+     * @param user
+     */
+    public Patient(LocalDate birthDate, PatientGender gender, User user) {
+        this.birthDate = birthDate;
+        this.gender = gender;
+            this.user = user;
+    }
+
+    /**
+     *
+     */
     public Patient() {
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return "Patient{" + "id=" + id + ", name=" + name + ", birthDate=" + birthDate + ", gender=" + gender + '}';
     }
     
+    /**
+     *
+     * @return
+     */
     @Override
     public int hashCode() {
         int hash = 5;
@@ -131,6 +214,11 @@ public class Patient extends AbstractNamedEntity{
         return hash;
     }
 
+    /**
+     *
+     * @param obj
+     * @return
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
