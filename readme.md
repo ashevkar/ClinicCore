@@ -98,10 +98,31 @@ This design makes it easy for everyone to use the system and helps hospitals and
 ### 🏠 Home Page
 ![Home Page](https://github.com/itmd4515/itmd4515-s24-fp-ashevkar/assets/152341739/cd8f3e89-80d2-4d7a-bedd-02ac5383e44f)
 
+![Home Page 2](https://github.com/itmd4515/itmd4515-s24-fp-ashevkar/assets/152341739/9c50542c-ff62-4b84-838b-5db673ef76b6)
+
 ### 🔑 Login Validation
 ![Login Validation](https://github.com/itmd4515/itmd4515-s24-fp-ashevkar/assets/152341739/cfee45e1-152c-4741-b16e-95822ec0d455)
 
-More screenshots are available in the repository! 📂
+### 🏥 Patient Portal
+![Patient Welcome](https://github.com/itmd4515/itmd4515-s24-fp-ashevkar/assets/152341739/a469e9c7-5ab1-4382-afd8-f306d42f6c59)
+![Patient Info](https://github.com/itmd4515/itmd4515-s24-fp-ashevkar/assets/152341739/61b1e5d2-6b02-4e67-afb6-7235bdd4bdfd)
+
+### 📝 Patient Profile Management
+![Patient View](https://github.com/itmd4515/itmd4515-s24-fp-ashevkar/assets/152341739/60715af4-d639-4e56-a330-3ef9845180e2)
+![Patient Edit](https://github.com/itmd4515/itmd4515-s24-fp-ashevkar/assets/152341739/4c577de6-df83-496b-9f56-e1935992118a)
+
+### 📅 Appointment Management
+![Patient Schedule](https://github.com/itmd4515/itmd4515-s24-fp-ashevkar/assets/152341739/822d773f-8968-4199-be98-025dda47f92c)
+![Appointment Confirmation](https://github.com/itmd4515/itmd4515-s24-fp-ashevkar/assets/152341739/84597878-78f6-46f2-885c-9d9722f5a3ee)
+
+### 👨‍⚕️ Doctor Portal
+![Doctor Page](https://github.com/itmd4515/itmd4515-s24-fp-ashevkar/assets/152341739/91a3ab67-4b68-41e7-82fa-70431e279043)
+
+### 🏩 Hospital Management
+![Hospital Page](https://github.com/itmd4515/itmd4515-s24-fp-ashevkar/assets/152341739/b700df17-baad-41a2-826c-a871cceec414)
+
+### 🏢 Admin Dashboard
+![Admin Dashboard](https://github.com/itmd4515/itmd4515-s24-fp-ashevkar/assets/152341739/769ab348-63af-4fc5-a01f-0d0887ef47dc)
 
 ---
 
