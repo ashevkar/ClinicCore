@@ -1,41 +1,131 @@
->Create a new Sakila Sample Database Actor
-<img width="1440" alt="1" src="https://github.com/itmd4515/itmd4515-s24-fp-ashevkar/assets/152341739/70cbd329-b6e9-46ee-9e32-aaeb1c7f3b13">
+# 🏥 ClinicCore: Innovative Role-Driven Healthcare Platform
 
->Confirmation page where it displays the user input
-<img width="1440" alt="2" src="https://github.com/itmd4515/itmd4515-s24-fp-ashevkar/assets/152341739/c351d250-3c5e-407e-ae1d-809346dcd862">
+## 📌 Summary
+I created a hospital management system that organizes all the important details about hospitals, doctors, patients, and appointments into one system. This system lets patients connect with many hospitals and doctors, and it lets hospitals connect with many patients too. Each doctor works at one specific hospital, and doctors and patients can make, change, or cancel their appointments easily.
 
->A new data has been inserted in the Sakila database table actor.
-<img width="822" alt="3" src="https://github.com/itmd4515/itmd4515-s24-fp-ashevkar/assets/152341739/c62bcece-e3b0-4038-a614-5854f6a7ba8d">
+When users first visit the system, they see a simple homepage with a navigation bar that helps them find different sections like **"About Us," "Doctors,"** and **"Departments."** There's also a 🔑 **login button** that users must click to enter their username and password. If they forget to fill these in, the system will alert them to complete these fields.
 
->One Constraint Violation
-<img width="1440" alt="4" src="https://github.com/itmd4515/itmd4515-s24-fp-ashevkar/assets/152341739/fb3951a7-05d8-40e9-b03c-51a5b97ff8b4">
+After logging in, the system shows different things depending on who's using it:
+- 👨‍⚕️ **Patients** can look at and change their own information and handle their appointments.
+- 🏥 **Hospital staff** can see a list of all the patients at their hospital and add new ones if needed.
+- 👩‍⚕️ **Doctors** can see their appointments and adjust them as needed.
+- 👨‍💼 **Admins** can see everything, including all the details about patients and which hospitals they visit. They can also look at reports showing how many patients each hospital has.
 
->Two Constraint Violations
-<img width="1440" alt="5" src="https://github.com/itmd4515/itmd4515-s24-fp-ashevkar/assets/152341739/614306c2-a789-4f6b-9272-6bd558634a17">
+---
 
->Three Constraint Violations
-<img width="1440" alt="6" src="https://github.com/itmd4515/itmd4515-s24-fp-ashevkar/assets/152341739/75b514f8-d8fc-40b0-ba5c-392911763a64">
+## 🎨 Design of the Hospital Management System
+The system starts with a **simple and clear homepage**. There's a 🧭 **navigation bar** at the top with buttons that take you to different parts of the page when you click on them. There's also a **login button** at the top right. If someone tries to log in without entering their username or password, a ⚠️ message will pop up reminding them to fill in those fields.
 
+Once logged in:
+- 🏥 **Patients** go to a welcome page and then to their own page where they can check and update their information and manage their appointments.
+- 🏩 **Hospital staff** log in and go to a page that shows all the patients at their hospital, and they can also add new patients.
+- 👩‍⚕️ **Doctors** log in and get to a page where they can **set up new appointments or change existing ones.**
 
-1. Your understanding of the difference between the forward and redirect operations.
-   
->The main difference between forward and redirect operations lies in how they handle the request-response cycle. A redirect initiates a completely new cycle, resulting in a loss of state from the original request. To preserve or transfer information during a redirect, additional mechanisms like query parameters or session management are needed. On the other hand, a forward operation passes control to another server-side resource without starting a new cycle. It retains the state in the request or response objects, ensuring data persistence throughout the forwarding process.
+This design makes it easy for everyone to use the system and helps hospitals and doctors take good care of their patients. 🏥💙
 
+---
 
-2. How would you be validating user submissions without the Bean Validation API
-standard?
+## ⚙️ Requirements (Installation, Compile, Runtime, Database, etc.)
+### 📥 Steps to Install/Download
+1. **Install Java Development Kit (JDK) ☕**
+   - Download OpenJDK version 17.0.11+9 for Mac from Adoptium.
+   - Install it using the PKG file or by typing:  
+     ```bash
+     brew install openjdk
+     ```
 
->Without the Bean Validation API, I would implement custom validation logic tailored to the project's requirements. I’d create specific validation classes to address missing data, checking for null or empty strings. Additionally, I'd ensure proper validation for malformed data, verifying values are in the correct format.
+2. **Set Up Environment Variables 🌍**
+   - In your macOS terminal, type:
+     ```bash
+     export JAVA_HOME=$(/usr/libexec/java_home -v 17)
+     export PATH=${JAVA_HOME}/bin:${PATH}
+     ```
+   - Verify by typing:
+     ```bash
+     java -version
+     javac -version
+     ```
 
+3. **Install and Set Up an IDE 🖥️**
+   - Download and install **Apache NetBeans 21** from the NetBeans website.
+   - Let NetBeans install necessary plugins and set up Maven indexes on first launch.
 
-3. How do you think this approach would scale to a real application with 100's of
-entities?
+4. **Install and Set Up Payara Server 🚀**
+   - Download **Payara Server** from the Payara website.
+   - Extract files to a **folder without spaces** in its path.
+   - Set up Payara Server in NetBeans.
 
->For a large-scale application with hundreds of entities, a custom validation approach should prioritize modular and reusable design, efficiency optimization, parallel processing, and clear documentation. However, challenges may arise in scalability due to potential maintenance issues and code duplication. In contrast, the Bean Validation API provides a standardized and efficient solution, promoting code reusability and consistency, making it a more suitable choice for larger-scale applications.
+5. **Install and Set Up MySQL 🗄️**
+   - Download **MySQL Community Server 8.0** for macOS.
+   - Choose **Custom Setup** and install both MySQL Server and MySQL Workbench.
+   - Set a root password.
+   - Alternatively, install MySQL using Homebrew:
+     ```bash
+     brew install mysql
+     ```
 
+6. **Set Up MySQL Workbench 🛠️**
+   - Open **MySQL Workbench** and connect using the root user.
+   - Create a new database schema called `itmd4515` and a new user with full access.
 
-4. Why didn't we need to include any additional dependencies (i.e. Bean Validation,
-JDBC) in this project?
+7. **Configure NetBeans to Connect to MySQL 🏗️**
+   - Set up NetBeans to connect to the MySQL database you just created.
 
->In this project, Jakarta Enterprise 10 dependency is automatically included with a scope "provided”. The “provided” means the libraries that are underneath the Jakarta enterprise umbrella are now included as dependencies like Jakarta servlet, JSP, and JSTL, so all the dependencies are included in our project. The "provided" scope indicates that these dependencies are included in the project during compilation, development, and testing. Maven includes them in the artifact, but at runtime, they are supplied by the Payara server. As a result, there's no need to include additional dependencies, such as Bean Validation and JDBC, as they are bundled with the application and provided by the application server during runtime.
+8. **Testing and Verification ✅**
+   - Confirm JDK installation:
+     ```bash
+     java -version
+     ```
+   - Verify MySQL is working by running a test query in **MySQL Workbench**.
 
+9. **Dependencies 📦** (Add to `pom.xml`):
+   - `jakarta.jakartaee-api` version `${jakartaee}`
+   - `mysql-connector-j` version `8.0.33`
+   - `junit-jupiter-engine` version `5.10.1`
+   - `org.eclipse.persistence.jpa` version `4.0.2`
+   - `hibernate-validator` version `8.0.1.Final`
+   - `expressly` version `5.0.0`
+   - `hibernate-validator-cdi` version `8.0.1.Final`
+
+10. **Run the Project ▶️**
+    - Start the **Payara Server**, clean the project data, and then launch the project.
+
+---
+
+## 📸 Screenshots
+*Check out the visuals of the system below!*
+
+### 🏠 Home Page
+![Home Page](https://github.com/itmd4515/itmd4515-s24-fp-ashevkar/assets/152341739/cd8f3e89-80d2-4d7a-bedd-02ac5383e44f)
+
+### 🔑 Login Validation
+![Login Validation](https://github.com/itmd4515/itmd4515-s24-fp-ashevkar/assets/152341739/cfee45e1-152c-4741-b16e-95822ec0d455)
+
+More screenshots are available in the repository! 📂
+
+---
+
+## 🔐 Login Credentials
+| Role       | Username | Password |
+|------------|----------|----------|
+| 🏥 Patient | `patient1` | `patient1` |
+| 👨‍⚕️ Doctor | `doctor1` | `doctor1` |
+| 👨‍💼 Admin | `admin` | `admin` |
+| 🏩 Hospital | `hospital1` | `hospital1` |
+
+---
+
+## 🔍 Development Insights
+🚧 **Challenges Faced:**
+1. **Admin Role Creation Issue ⚠️**
+   - I aimed to establish an admin role with the capability to create new users. However, I encountered persistent errors when trying to add usernames and passwords. Despite several days of debugging, the issue remains unresolved.
+
+2. **Appointment Deletion Bug 🛑**
+   - Appointments are removed from the **database**, but these changes do not reflect on the **webpage**.
+
+3. **PrimeFaces & JSF Component Library Integration 🚀**
+   - I attempted to integrate PrimeFaces, but numerous errors arose, and my debugging efforts were unsuccessful.
+
+---
+
+✨ *Thank you for checking out my project!* 🚀
